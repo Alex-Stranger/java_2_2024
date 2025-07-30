@@ -1,0 +1,25 @@
+Trip Cancellation Risk Calculation Formula and Description
+
+Formula:
+Risk = BaseRate × CountryCoefficient × AgeCoefficient × MedicalRiskCoefficient
+
+Where:
+1. BaseRate (for example, 55 EUR, can be set by the system).
+2. CountryCoefficient - coefficient associated with the country of travel (for example, LATVIA = 1.0, SPAIN = 2.5, JAPAN = 3.5).
+3. AgeCoefficient - risk coefficient depending on the age of the tourist
+(0-5 age -> 1.1
+6-10 age -> 0.7
+11-17 age -> 1.0
+18-40 age -> 1.1
+41-65 age -> 1.2
+66-100 age -> 1.5).
+4. MedicalRiskCoefficient - a coefficient determined by the selected level of medical risk coverage.
+
+Calculation example:
+Country: JAPAN -> CountryCoefficient = 3.5
+Age: 70 years -> AgeCoefficient = 1.5
+Medical risk level: 20,000 EUR -> MedicalRiskCoefficient = 1.5
+Base rate: 55 EUR
+
+Гse the formula:
+Risk = 55 × 3.5 × 1.5 × 1.5 = 393.75 EUR

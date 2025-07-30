@@ -1,0 +1,16 @@
+package lv.javaguru.travel.insurance.rest;
+
+import org.junit.jupiter.api.Test;
+
+public class TravelCalculatePremiumControllerTestCase4 extends TravelCalculatePremiumControllerTest {
+
+    @Override
+    public String getTestCaseFolderName() {
+        return "test_case_4";
+    }
+
+    @Test
+    public void execute() throws Exception {
+        executeAndEvaluate();
+    }
+}

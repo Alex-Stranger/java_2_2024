@@ -1,0 +1,12 @@
+{
+  "errors": [
+    {
+      "errorCode": "ERROR_CODE_14",
+      "description": "Medical risk limit level not supported!"
+    },
+    {
+      "errorCode": "ERROR_CODE_14",
+      "description": "Medical risk limit level not supported!"
+    }
+  ]
+}

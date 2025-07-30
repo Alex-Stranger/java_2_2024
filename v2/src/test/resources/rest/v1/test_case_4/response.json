@@ -1,0 +1,18 @@
+{
+  "uuid": "6759ed3e-08fb-423e-a8b9-998b03085031",
+  "personFirstName": "Tom",
+  "personLastName": "Sawyer",
+  "personalCode": "08051865-15728",
+  "personBirthDate": "2022-04-01",
+  "agreementDateFrom": "2025-10-25",
+  "agreementDateTo": "2025-12-29",
+  "country": "JAPAN",
+  "medicalRiskLimitLevel": "LEVEL_15000",
+  "agreementPremium": 0.00,
+  "risks": [
+    {
+      "riskIc": "TRAVEL_LOSS_BAGGAGE",
+      "premium": 0.00
+    }
+  ]
+}

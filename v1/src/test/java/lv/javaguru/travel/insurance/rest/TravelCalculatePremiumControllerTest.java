@@ -1,0 +1,57 @@
+package lv.javaguru.travel.insurance.rest;
+
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.MediaType;
+import org.springframework.test.context.junit.jupiter.SpringExtension;
+import org.springframework.test.web.servlet.MockMvc;
+import org.springframework.test.web.servlet.MvcResult;
+
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
+
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+import static uk.org.webcompere.modelassert.json.JsonAssertions.assertJson;
+
+@ExtendWith(SpringExtension.class)
+@SpringBootTest
+@AutoConfigureMockMvc
+public abstract class TravelCalculatePremiumControllerTest {
+
+    @Autowired
+    private MockMvc mockMvc;
+
+    @Autowired
+    private JsonFileReader jsonFileReader;
+
+    public abstract String getTestCaseFolderName();
+
+    public void executeAndEvaluate() throws Exception {
+        executeAndEvaluate
+                ("rest/" + getTestCaseFolderName() + "/request.json",
+                        "rest/" + getTestCaseFolderName() + "/response.json");
+    }
+
+    private void executeAndEvaluate(String jsonRequestFilePath, String jsonResponseFilePath) throws Exception {
+        String jsonRequest = jsonFileReader.readJsonFromFile(jsonRequestFilePath);
+        MvcResult calculatedResult = mockMvc.perform(post("/insurance/travel/api/")
+                        .content(jsonRequest)
+                        .header(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_JSON_VALUE))
+                .andExpect(status().isOk())
+                .andReturn();
+        String responseContent = calculatedResult.getResponse().getContentAsString();
+        String expectedJsonResponse = jsonFileReader.readJsonFromFile(jsonResponseFilePath);
+
+        assertJson(responseContent)
+                .where()
+                .keysInAnyOrder()
+                .arrayInAnyOrder()
+                .isEqualTo(expectedJsonResponse);
+
+
+
+    }
+
+}
