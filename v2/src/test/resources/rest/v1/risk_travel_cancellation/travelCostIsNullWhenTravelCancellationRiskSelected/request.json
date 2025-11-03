@@ -1,0 +1,12 @@
+{
+  "personFirstName" : "Tom",
+  "personLastName" : "Sawyer",
+  "personalCode" : "08051865-15728",
+  "personBirthDate" : "2022-04-01",
+  "agreementDateFrom" : "2026-05-25",
+  "agreementDateTo" : "2026-12-29",
+  "country" : "JAPAN",
+  "medicalRiskLimitLevel" : "LEVEL_15000",
+  "travelCost" : null,
+  "selectedRisks" : ["TRAVEL_MEDICAL", "TRAVEL_CANCELLATION", "TRAVEL_LOSS_BAGGAGE"]
+}

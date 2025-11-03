@@ -1,0 +1,8 @@
+{
+  "errors": [
+    {
+      "errorCode": "ERROR_CODE_15",
+      "description": "Medical risk limit level must not be empty!"
+    }
+  ]
+}

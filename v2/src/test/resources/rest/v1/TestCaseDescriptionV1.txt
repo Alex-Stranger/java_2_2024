@@ -1,0 +1,88 @@
+1) agreement folder:
+agreementDateFromIsEmpty
+request: agreementDateFrom is empty;
+response: "ERROR_CODE_3";
+
+agreementDateToIsEmpty
+request: agreementDateTo is empty;
+response: "ERROR_CODE_5";
+
+agreementDateToLessThanAgreementDateFrom
+request: agreementDateTo less than agreementDateFrom;
+response: "ERROR_CODE_1"; "ERROR_CODE_4";
+
+allFieldsAreSpecified
+request: All fields are specified;
+response: specified;
+
+allFieldsIsNull
+request: All fields is null;
+response: null
+
+countryIsEmpty
+request: Country is empty travel medical;
+response: "ERROR_CODE_10";
+
+2) person folder:
+personalCodeIsEmpty
+request: personalCode is empty;
+response: "ERROR_CODE_16";
+
+personalCodeIsNull
+request: personalCode is null;
+response: "ERROR_CODE_16";
+
+personBirthDateIsNull
+request: "personBirthDate is null;
+response: "ERROR_CODE_11";
+
+personBirthDateMustNotBeInTheFuture
+request: personBirthDate must not be in the future;
+response: "ERROR_CODE_12";
+
+personFirstNameIsEmpty
+request:  personFirstName is empty;
+response: "ERROR_CODE_7";
+
+personLastNameIsEmpty
+request: personLastName is empty;
+response: "ERROR_CODE_8";
+
+3) risk_travel_cancellation folder:
+allFieldsAreSpecified
+request: All fields are specified;
+response: specified;
+
+travelCancellationRiskNotSelected
+request: TRAVEL_CANCELLATION risk not selected;
+response: TRAVEL_CANCELLATION risk not selected;
+
+travelCostIsEmptyWhenTravelCancellationRiskSelected
+request: travelCost is empty when TRAVEL_CANCELLATION risk selected;
+response: "ERROR_CODE_19";
+
+travelCostIsNullWhenTravelCancellationRiskSelected
+request: travelCost is null when TRAVEL_CANCELLATION risk selected;
+response: "ERROR_CODE_19";
+
+4) risk_travel_medical folder:
+medicalRiskLimitLevelIsEmpty
+request: medicalRiskLimitLevel is empty;
+response: "ERROR_CODE_15";
+
+5) risks folder:
+allFieldsIsNullExceptSelectedRisks
+request: All fields is null except selectedRisks;
+response: null except selectedRisks;
+
+selectedRisksIsEmpty
+request: selectedRisks is empty;
+response: "ERROR_CODE_6";
+
+selectedRisksIsNotSupported
+request: selectedRisks is not valid;
+response: "ERROR_CODE_9"; "ERROR_CODE_9";
+
+selectedRisksIsNull
+request: selectedRisks is null;
+response: "ERROR_CODE_6";

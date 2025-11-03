@@ -1,0 +1,49 @@
+1. Description of the business task.
+To integrate with an external system, it is necessary to upload data for each policy daily
+into separate XML files.
+Files must contain:
+All policy fields, persons, and risks, and also calculated premiums.
+
+2. Technical description of the implementation.
+
+Data upload:
+Responsible for selecting data from the database and converting it into a model structure for export.
+The data selection will be done in batches to avoid loading all records into memory.
+
+XML generation:
+Generates XML files based on prepared data.
+
+File storage and transfer:
+Saves XML files to the specified directory and optionally transfers them to an external system.
+Each file name must be unique and include policy identifier and date of export.
+If a file with the same name already exists in the export directory,
+it's behavior must be configurable via application settings.
+
+@Scheduled annotation:
+Starts the unloading process.
+
+Feature enabling/disabling:
+The export functionality must be configurable and can be enabled or disabled through application settings.
+When disabled, the @Scheduler annotation should skip execution, and no files should be generated.
+
+Architectural part:
+The export job will be implemented as a separate integration module and will communicate with the core application
+ via REST API or internal service interface. The core system remains responsible for providing policy data via an internal API.
+
+3. Testing process.
+
+Unit-tests:
+Check error handling when required fields are missing.
+Check that the file is written correctly to the file system.
+
+Integration tests:
+Checks the interaction between several modules, components, or subsystems
+of an application (controllers, services, repositories) and their correct operation together.
+
+Performance testing:
+Check the unloading time for large amounts of data.
+Check file size and file system load.
+
+4.Running and exploitation the functionality on production.
+This section includes instructions on how to start data uploads to production, set up an execution schedule,
+check logs, and recover from errors.

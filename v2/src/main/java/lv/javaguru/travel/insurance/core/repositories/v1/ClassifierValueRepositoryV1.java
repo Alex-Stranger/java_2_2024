@@ -1,0 +1,22 @@
+package lv.javaguru.travel.insurance.core.repositories.v1;
+
+import lv.javaguru.travel.insurance.core.domain.ClassifierValue;
+import org.springframework.cache.annotation.Cacheable;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
+
+import java.util.Optional;
+
+public interface ClassifierValueRepositoryV1 extends JpaRepository<ClassifierValue, Long> {
+
+    @Cacheable(value = "classifierValueV1", key = "#p0 + '_' + #p1", cacheManager = "cacheManagerV1")
+    @Query("SELECT cv from ClassifierValue cv " +
+           "left join cv.classifier c " +
+           "where c.title = :classifierTitle " +
+           "and cv.ic = :ic")
+    Optional<ClassifierValue> findByClassifierTitleAndIc(
+            @Param("classifierTitle") String classifierTitle,
+            @Param("ic") String ic
+    );
+}

@@ -1,0 +1,67 @@
+Load testing results
+
+API v1 (MySQL, 5 threads, 60 requestCounts)
+Total tasks: 300
+Execution time: 66 sec
+Average response time: 455 ms
+Minimum time: 351 ms
+Maximum time: 1147 ms (peaks)
+Throughput: 4 requests/sec
+
+API v2 (MySQL, 5 threads, 60 requestCounts)
+Total tasks: 300
+Execution time: 69 sec
+Average response time: 719 sec
+Minimum time: 377 sec
+Maximum time: 2037 sec (peaks)
+Throughput: 4 requests/sec
+
+The system in its current configuration can handle up to 5 parallel threads and about 4 requests/second without critical failures.
+When using MySQL the load is processed slower, but it is closer to real exploitation. The v1 API is faster in terms of average response time,
+but sometimes produces very long delays (up to 11 seconds). The v2 API is more stable (peaks up to 2 seconds), but works slower on average.
+
+API v1 (H2 (in-memory), 5 threads, 60 requestCounts)
+Total tasks: 300
+Execution time: 67 sec
+Average response time: 352 ms
+Minimum time: 167 ms
+Maximum time: 1433 ms (peaks)
+Throughput: 4 requests/sec
+
+API v2 (H2 (in-memory), 5 threads, 60 requestCounts)
+Total tasks: 300
+Execution time: 67 sec
+Average response time: 242 ms
+Minimum time: 147 ms
+Maximum time: 748 ms (peaks)
+Throughput: 4 requests/sec
+
+1. H2 is faster than MySQL:
+The average response time for H2 is significantly lower (v1: 352 ms, v2: 242 ms) than for MySQL (v1: 455 ms, v2: 719 ms).
+
+2. API v1 against v2:
+In MySQL v1 works faster (455 ms against 719 ms), but it is unstable (peaks up to 11 seconds).
+In H2 v2 works faster and more stable (242 ms against 352 ms).
+
+3. The throughput is the same (4 requests/sec) for all tests.
+
+4. Stability:
+MySQL v1 has strong response time fluctuations (max. 11 seconds).
+H2 does not have such peaks, the maximum time for v2 is only 748 ms.
+
+The application in the current configuration can handle a load of 5 parallel threads and about 4 requests/second.
+With H2 (in-memory) the system copes with the load better - the average response time is lower, delays are more stable.
+With MySQL the load is processed more slowly, but the tests are closer to real exploitation.
+API v1 is faster in MySQL but unstable.
+The v2 API version is more stable and works especially well in H2.
+
+Both databases coped with the increase in load to 10 threads, 200 requestCounts, but H2 showed the best result.
+On H2 v1 scales noticeably better (179ms against 330ms on v2).
+On MySQL v1 it is also more stable (606 ms against 907 ms on v2).
+Conclusion: v1 demonstrates more stable performance and scales better as the load increases, especially on MySQL.
+v2 only provides an advantage for small task volumes on H2, but loses efficiency as the load increases.
+
+After applying the realization to
+caching the values of all requests, the average execution time decreased (from 1739 to 1672 ms).
+The total execution time for all 2000 tasks has been decreased (from 366 to 346 sec).
+The maximum time has also decreased (from 3481 to 3454).
