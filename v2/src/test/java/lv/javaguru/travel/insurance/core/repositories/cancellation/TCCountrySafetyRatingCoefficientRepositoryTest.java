@@ -1,7 +1,7 @@
 package lv.javaguru.travel.insurance.core.repositories.cancellation;
 
-import lv.javaguru.travel.insurance.core.domain.TMCountryDefaultDayRate;
 import lv.javaguru.travel.insurance.core.domain.cancellation.TCCountrySafetyRatingCoefficient;
+import lv.javaguru.travel.insurance.core.repositories.v1.cancellation.TCCountrySafetyRatingCoefficientRepositoryV1;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,7 +18,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 class TCCountrySafetyRatingCoefficientRepositoryTest {
 
     @Autowired
-    private TCCountrySafetyRatingCoefficientRepository countrySafetyRatingCoefficientRepository;
+    private TCCountrySafetyRatingCoefficientRepositoryV1 countrySafetyRatingCoefficientRepository;
 
     @Test
     public void ifCountrySafetyRatingCoefficientIsSpecified() {

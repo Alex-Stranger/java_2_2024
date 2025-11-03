@@ -1,6 +1,7 @@
 package lv.javaguru.travel.insurance.core.repositories;
 
 import lv.javaguru.travel.insurance.core.domain.TMCountryDefaultDayRate;
+import lv.javaguru.travel.insurance.core.repositories.v1.TMCountryDefaultDayRateRepositoryV1;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,7 +18,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 class TMCountryDefaultDayRateRepositoryTest {
 
     @Autowired
-    private TMCountryDefaultDayRateRepository countryDefaultDayRateRepository;
+    private TMCountryDefaultDayRateRepositoryV1 countryDefaultDayRateRepository;
 
     @Test
     public void ifCountryIsSpecified() {

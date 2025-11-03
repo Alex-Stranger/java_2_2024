@@ -3,7 +3,7 @@ package lv.javaguru.travel.insurance.core.underwriting.calculators.cancellation;
 import lv.javaguru.travel.insurance.core.api.dto.PersonDTO;
 
 import lv.javaguru.travel.insurance.core.domain.cancellation.TCAgeCoefficient;
-import lv.javaguru.travel.insurance.core.repositories.cancellation.TCAgeCoefficientRepository;
+import lv.javaguru.travel.insurance.core.repositories.v1.cancellation.TCAgeCoefficientRepositoryV1;
 import lv.javaguru.travel.insurance.core.util.DateTimeUtil;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -28,7 +28,7 @@ class TCAgeCoefficientCalculatorTest {
     private DateTimeUtil dateTimeUtil;
 
     @Mock
-    private TCAgeCoefficientRepository ageCoefficientRepository;
+    private TCAgeCoefficientRepositoryV1 ageCoefficientRepository;
 
     @InjectMocks
     private TCAgeCoefficientCalculator ageCoefficientCalculator;

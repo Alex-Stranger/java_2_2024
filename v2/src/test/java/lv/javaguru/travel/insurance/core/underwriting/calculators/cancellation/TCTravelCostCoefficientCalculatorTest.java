@@ -2,7 +2,7 @@ package lv.javaguru.travel.insurance.core.underwriting.calculators.cancellation;
 
 import lv.javaguru.travel.insurance.core.api.dto.PersonDTO;
 import lv.javaguru.travel.insurance.core.domain.cancellation.TCTravelCostCoefficient;
-import lv.javaguru.travel.insurance.core.repositories.cancellation.TCTravelCostCoefficientRepository;
+import lv.javaguru.travel.insurance.core.repositories.v1.cancellation.TCTravelCostCoefficientRepositoryV1;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -20,7 +20,7 @@ import static org.mockito.Mockito.*;
 class TCTravelCostCoefficientCalculatorTest {
 
     @Mock
-    private TCTravelCostCoefficientRepository travelCostCoefficientRepository;
+    private TCTravelCostCoefficientRepositoryV1 travelCostCoefficientRepository;
 
     @InjectMocks
     private TCTravelCostCoefficientCalculator travelCostCoefficientCalculator;

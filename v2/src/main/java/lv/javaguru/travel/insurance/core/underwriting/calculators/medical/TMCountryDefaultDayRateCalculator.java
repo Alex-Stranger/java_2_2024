@@ -2,7 +2,7 @@ package lv.javaguru.travel.insurance.core.underwriting.calculators.medical;
 
 import lv.javaguru.travel.insurance.core.api.dto.AgreementDTO;
 import lv.javaguru.travel.insurance.core.domain.TMCountryDefaultDayRate;
-import lv.javaguru.travel.insurance.core.repositories.TMCountryDefaultDayRateRepository;
+import lv.javaguru.travel.insurance.core.repositories.v1.TMCountryDefaultDayRateRepositoryV1;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -13,7 +13,7 @@ import java.math.BigDecimal;
 class TMCountryDefaultDayRateCalculator {
 
     @Autowired
-    private TMCountryDefaultDayRateRepository countryDefaultDayRateRepository;
+    private TMCountryDefaultDayRateRepositoryV1 countryDefaultDayRateRepository;
 
     public BigDecimal findCountryDefaultDayRate(AgreementDTO agreement) {
         String countryIc = agreement.getCountry();

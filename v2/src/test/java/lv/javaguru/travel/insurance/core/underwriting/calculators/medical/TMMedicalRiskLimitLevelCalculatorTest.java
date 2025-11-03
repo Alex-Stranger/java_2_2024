@@ -2,7 +2,7 @@ package lv.javaguru.travel.insurance.core.underwriting.calculators.medical;
 
 import lv.javaguru.travel.insurance.core.api.dto.PersonDTO;
 import lv.javaguru.travel.insurance.core.domain.TMMedicalRiskLimitLevel;
-import lv.javaguru.travel.insurance.core.repositories.TMMedicalRiskLimitLevelRepository;
+import lv.javaguru.travel.insurance.core.repositories.v1.TMMedicalRiskLimitLevelRepositoryV1;
 
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -25,7 +25,7 @@ class TMMedicalRiskLimitLevelCalculatorTest {
     private PersonDTO person;
 
     @Mock
-    private TMMedicalRiskLimitLevelRepository medicalRiskLimitLevelRepository;
+    private TMMedicalRiskLimitLevelRepositoryV1 medicalRiskLimitLevelRepository;
 
     @InjectMocks
     private TMMedicalRiskLimitLevelCalculator medicalRiskLimitLevelCalculator;

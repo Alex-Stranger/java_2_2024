@@ -2,7 +2,7 @@ package lv.javaguru.travel.insurance.core.underwriting.calculators.medical;
 
 import lv.javaguru.travel.insurance.core.api.dto.PersonDTO;
 import lv.javaguru.travel.insurance.core.domain.TMAgeCoefficient;
-import lv.javaguru.travel.insurance.core.repositories.TMAgeCoefficientRepository;
+import lv.javaguru.travel.insurance.core.repositories.v1.TMAgeCoefficientRepositoryV1;
 import lv.javaguru.travel.insurance.core.util.DateTimeUtil;
 
 import org.junit.jupiter.api.Test;
@@ -29,7 +29,7 @@ class TMAgeCoefficientCalculatorTest {
     private DateTimeUtil dateTimeUtil;
 
     @Mock
-    private TMAgeCoefficientRepository ageCoefficientRepository;
+    private TMAgeCoefficientRepositoryV1 ageCoefficientRepository;
 
     @InjectMocks
     private TMAgeCoefficientCalculator ageCoefficientCalculator;

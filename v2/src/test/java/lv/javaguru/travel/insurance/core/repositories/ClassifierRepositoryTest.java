@@ -1,6 +1,7 @@
 package lv.javaguru.travel.insurance.core.repositories;
 
 import lv.javaguru.travel.insurance.core.domain.Classifier;
+import lv.javaguru.travel.insurance.core.repositories.v1.ClassifierRepositoryV1;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,7 +17,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class ClassifierRepositoryTest {
 
     @Autowired
-    private ClassifierRepository classifierRepository;
+    private ClassifierRepositoryV1 classifierRepository;
 
     @Test
     public void injectedRepositoryAreNotNull() {

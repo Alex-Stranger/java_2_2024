@@ -2,7 +2,7 @@ package lv.javaguru.travel.insurance.core.underwriting.calculators.medical;
 
 import lv.javaguru.travel.insurance.core.api.dto.PersonDTO;
 import lv.javaguru.travel.insurance.core.domain.TMAgeCoefficient;
-import lv.javaguru.travel.insurance.core.repositories.TMAgeCoefficientRepository;
+import lv.javaguru.travel.insurance.core.repositories.v1.TMAgeCoefficientRepositoryV1;
 import lv.javaguru.travel.insurance.core.util.DateTimeUtil;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,7 +24,7 @@ class TMAgeCoefficientCalculator {
     private DateTimeUtil dateTimeUtil;
 
     @Autowired
-    private TMAgeCoefficientRepository ageCoefficientRepository;
+    private TMAgeCoefficientRepositoryV1 ageCoefficientRepository;
 
     BigDecimal calculateAgeCoefficient(PersonDTO person) {
         return medicalRiskAgeCoefficientEnabled

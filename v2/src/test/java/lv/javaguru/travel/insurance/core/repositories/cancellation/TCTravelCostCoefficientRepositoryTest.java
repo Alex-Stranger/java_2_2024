@@ -1,6 +1,7 @@
 package lv.javaguru.travel.insurance.core.repositories.cancellation;
 
 import lv.javaguru.travel.insurance.core.domain.cancellation.TCTravelCostCoefficient;
+import lv.javaguru.travel.insurance.core.repositories.v1.cancellation.TCTravelCostCoefficientRepositoryV1;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,7 +19,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 class TCTravelCostCoefficientRepositoryTest {
 
     @Autowired
-    private TCTravelCostCoefficientRepository travelCostCoefficientRepository;
+    private TCTravelCostCoefficientRepositoryV1 travelCostCoefficientRepository;
 
     @Test
     public void ifTravelCostIsSpecified() {

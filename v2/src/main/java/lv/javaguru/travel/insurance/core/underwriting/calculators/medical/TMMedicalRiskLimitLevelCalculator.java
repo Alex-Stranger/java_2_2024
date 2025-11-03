@@ -2,7 +2,7 @@ package lv.javaguru.travel.insurance.core.underwriting.calculators.medical;
 
 import lv.javaguru.travel.insurance.core.api.dto.PersonDTO;
 import lv.javaguru.travel.insurance.core.domain.TMMedicalRiskLimitLevel;
-import lv.javaguru.travel.insurance.core.repositories.TMMedicalRiskLimitLevelRepository;
+import lv.javaguru.travel.insurance.core.repositories.v1.TMMedicalRiskLimitLevelRepositoryV1;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -17,7 +17,7 @@ class TMMedicalRiskLimitLevelCalculator {
     private Boolean medicalRiskLimitLevelEnabled;
 
     @Autowired
-    private TMMedicalRiskLimitLevelRepository medicalRiskLimitLevelRepository;
+    private TMMedicalRiskLimitLevelRepositoryV1 medicalRiskLimitLevelRepository;
 
     BigDecimal calculateMedicalRiskLimitLevel(PersonDTO person) {
         return medicalRiskLimitLevelEnabled

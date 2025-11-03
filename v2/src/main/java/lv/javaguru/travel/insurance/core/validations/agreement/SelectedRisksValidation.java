@@ -2,7 +2,7 @@ package lv.javaguru.travel.insurance.core.validations.agreement;
 
 import lv.javaguru.travel.insurance.core.api.dto.AgreementDTO;
 import lv.javaguru.travel.insurance.core.api.dto.ValidationErrorDTO;
-import lv.javaguru.travel.insurance.core.repositories.ClassifierValueRepository;
+import lv.javaguru.travel.insurance.core.repositories.v1.ClassifierValueRepositoryV1;
 import lv.javaguru.travel.insurance.core.util.Placeholder;
 import lv.javaguru.travel.insurance.core.validations.ValidationErrorFactory;
 
@@ -17,7 +17,7 @@ import java.util.stream.Collectors;
 class SelectedRisksValidation extends AgreementFieldValidationImpl {
 
     @Autowired
-    private ClassifierValueRepository classifierValueRepository;
+    private ClassifierValueRepositoryV1 classifierValueRepository;
 
     @Autowired
     private ValidationErrorFactory validationErrorFactory;

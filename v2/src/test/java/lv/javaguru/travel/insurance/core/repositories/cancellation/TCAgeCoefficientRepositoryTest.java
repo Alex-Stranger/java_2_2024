@@ -1,7 +1,7 @@
 package lv.javaguru.travel.insurance.core.repositories.cancellation;
 
-import lv.javaguru.travel.insurance.core.domain.TMAgeCoefficient;
 import lv.javaguru.travel.insurance.core.domain.cancellation.TCAgeCoefficient;
+import lv.javaguru.travel.insurance.core.repositories.v1.cancellation.TCAgeCoefficientRepositoryV1;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,7 +19,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 class TCAgeCoefficientRepositoryTest {
 
     @Autowired
-    private TCAgeCoefficientRepository ageCoefficientRepository;
+    private TCAgeCoefficientRepositoryV1 ageCoefficientRepository;
 
     @Test
     public void ifAgeIsSpecified() {

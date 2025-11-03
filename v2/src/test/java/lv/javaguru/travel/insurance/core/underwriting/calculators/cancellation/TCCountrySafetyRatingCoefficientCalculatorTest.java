@@ -1,9 +1,8 @@
 package lv.javaguru.travel.insurance.core.underwriting.calculators.cancellation;
 
 import lv.javaguru.travel.insurance.core.api.dto.AgreementDTO;
-import lv.javaguru.travel.insurance.core.domain.TMCountryDefaultDayRate;
 import lv.javaguru.travel.insurance.core.domain.cancellation.TCCountrySafetyRatingCoefficient;
-import lv.javaguru.travel.insurance.core.repositories.cancellation.TCCountrySafetyRatingCoefficientRepository;
+import lv.javaguru.travel.insurance.core.repositories.v1.cancellation.TCCountrySafetyRatingCoefficientRepositoryV1;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
@@ -21,7 +20,7 @@ import static org.mockito.Mockito.when;
 class TCCountrySafetyRatingCoefficientCalculatorTest {
 
     @Mock
-    private TCCountrySafetyRatingCoefficientRepository countrySafetyRatingCoefficientRepository;
+    private TCCountrySafetyRatingCoefficientRepositoryV1 countrySafetyRatingCoefficientRepository;
 
     @InjectMocks
     private TCCountrySafetyRatingCoefficientCalculator countrySafetyRatingCoefficientCalculator;

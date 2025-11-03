@@ -3,7 +3,7 @@ package lv.javaguru.travel.insurance.core.validations.agreement;
 import lv.javaguru.travel.insurance.core.api.dto.AgreementDTO;
 import lv.javaguru.travel.insurance.core.api.dto.ValidationErrorDTO;
 import lv.javaguru.travel.insurance.core.domain.ClassifierValue;
-import lv.javaguru.travel.insurance.core.repositories.ClassifierValueRepository;
+import lv.javaguru.travel.insurance.core.repositories.v1.ClassifierValueRepositoryV1;
 import lv.javaguru.travel.insurance.core.validations.ValidationErrorFactory;
 
 import org.junit.jupiter.api.Test;
@@ -25,7 +25,7 @@ class CountryValidationTest {
     private AgreementDTO agreement;
 
     @Mock
-    private ClassifierValueRepository classifierValueRepository;
+    private ClassifierValueRepositoryV1 classifierValueRepository;
 
     @Mock
     private ValidationErrorFactory validationErrorFactory;

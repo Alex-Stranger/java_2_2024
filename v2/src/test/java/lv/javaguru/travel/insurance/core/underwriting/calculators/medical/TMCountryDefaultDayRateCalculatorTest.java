@@ -2,7 +2,7 @@ package lv.javaguru.travel.insurance.core.underwriting.calculators.medical;
 
 import lv.javaguru.travel.insurance.core.api.dto.AgreementDTO;
 import lv.javaguru.travel.insurance.core.domain.TMCountryDefaultDayRate;
-import lv.javaguru.travel.insurance.core.repositories.TMCountryDefaultDayRateRepository;
+import lv.javaguru.travel.insurance.core.repositories.v1.TMCountryDefaultDayRateRepositoryV1;
 
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -21,7 +21,7 @@ import static org.mockito.Mockito.when;
 class TMCountryDefaultDayRateCalculatorTest {
 
     @Mock
-    private TMCountryDefaultDayRateRepository countryDefaultDayRateRepository;
+    private TMCountryDefaultDayRateRepositoryV1 countryDefaultDayRateRepository;
 
     @InjectMocks
     private TMCountryDefaultDayRateCalculator countryDefaultDayRateCalculator;

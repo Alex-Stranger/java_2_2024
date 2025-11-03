@@ -1,6 +1,7 @@
 package lv.javaguru.travel.insurance.core.repositories;
 
 import lv.javaguru.travel.insurance.core.domain.TMMedicalRiskLimitLevel;
+import lv.javaguru.travel.insurance.core.repositories.v1.TMMedicalRiskLimitLevelRepositoryV1;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.junit.jupiter.MockitoExtension;
@@ -17,7 +18,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 class TMMedicalRiskLimitLevelRepositoryTest {
 
     @Autowired
-    private TMMedicalRiskLimitLevelRepository medicalRiskLimitLevelRepository;
+    private TMMedicalRiskLimitLevelRepositoryV1 medicalRiskLimitLevelRepository;
 
     @Test
     public void medicalRiskLimitLevelIsSpecified() {

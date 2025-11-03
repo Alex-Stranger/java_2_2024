@@ -2,7 +2,7 @@ package lv.javaguru.travel.insurance.core.underwriting.calculators.cancellation;
 
 import lv.javaguru.travel.insurance.core.api.dto.PersonDTO;
 import lv.javaguru.travel.insurance.core.domain.cancellation.TCAgeCoefficient;
-import lv.javaguru.travel.insurance.core.repositories.cancellation.TCAgeCoefficientRepository;
+import lv.javaguru.travel.insurance.core.repositories.v1.cancellation.TCAgeCoefficientRepositoryV1;
 import lv.javaguru.travel.insurance.core.util.DateTimeUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -19,7 +19,7 @@ class TCAgeCoefficientCalculator {
     private DateTimeUtil dateTimeUtil;
 
     @Autowired
-    private TCAgeCoefficientRepository ageCoefficientRepository;
+    private TCAgeCoefficientRepositoryV1 ageCoefficientRepository;
 
     public BigDecimal ageCoefficient(PersonDTO person) {
         int age = calculateAge(person);
