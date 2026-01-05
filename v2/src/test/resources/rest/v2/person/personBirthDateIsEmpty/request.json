@@ -7,14 +7,14 @@
     {
       "personFirstName" : "Tom",
       "personLastName" : "Sawyer",
-      "personalCode" : "08051865-15728",
+      "personalCode" : "080565-15728",
       "personBirthDate" : "",
       "medicalRiskLimitLevel" : "LEVEL_15000"
     },
     {
       "personFirstName" : "Mark",
       "personLastName" : "Twain",
-      "personalCode" : "12091824-10375",
+      "personalCode" : "120924-10375",
       "personBirthDate" : "",
       "medicalRiskLimitLevel" : "LEVEL_20000"
     }

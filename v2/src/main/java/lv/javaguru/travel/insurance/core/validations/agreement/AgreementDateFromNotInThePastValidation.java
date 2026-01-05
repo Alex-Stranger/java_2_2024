@@ -27,6 +27,4 @@ class AgreementDateFromNotInThePastValidation extends AgreementFieldValidationIm
                 ? Optional.of(validationErrorFactory.buildError("ERROR_CODE_2"))
                 : Optional.empty();
     }
-
-
 }

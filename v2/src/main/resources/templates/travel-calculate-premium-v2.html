@@ -119,6 +119,11 @@
     <button type="submit">Calculate Premium</button>
 </form>
 
+<form action="/insurance/travel/web/v1" method="get">
+    <button type="submit">Clear</button>
+
+</form>
+
 
 
 <td th:if="${response.persons != null}">
@@ -157,6 +162,24 @@
 
 <br>
 
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+    function formatDate(date) {
+    return date.toISOString().split('T')[0]
+    }
+
+    const today = new Date();
+
+    const dateFrom = new Date(today);
+    dateFrom.setDate(today.getDate() + 1);
+
+    const dateTo = new Date(today);
+    dateTo.setDate(today.getDate() + 2);
+
+    document.getElementById('agreementDateFrom').value = formatDate(dateFrom);
+    document.getElementById('agreementDateTo').value = formatDate(dateTo);
+});
+</script>
 
 </body>
 </html>

@@ -18,8 +18,9 @@ class PersonFirstNameValidation extends PersonFieldValidationImpl {
 
     @Override
     public Optional<ValidationErrorDTO> validate(AgreementDTO agreement, PersonDTO person) {
-        return (person.getPersonFirstName() == null || person.getPersonFirstName().isEmpty())
-                ? Optional.of(validationErrorFactory.buildError("ERROR_CODE_7"))
-                : Optional.empty();
+        if (person.getPersonFirstName() == null || person.getPersonFirstName().isEmpty()) {
+            return Optional.of(validationErrorFactory.buildError("ERROR_CODE_7"));
+        }
+        return Optional.empty();
     }
 }

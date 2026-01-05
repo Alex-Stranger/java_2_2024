@@ -132,4 +132,14 @@ CREATE TABLE IF NOT EXISTS travel_cancellation_country_safety_rating_coefficient
     PRIMARY KEY (id)
 );
 
+CREATE TABLE agreements_xml_export (
+id BIGINT NOT NULL AUTO_INCREMENT,
+agreement_uuid VARCHAR(255) NOT NULL,
+already_exported BOOL,
+PRIMARY KEY (id),
+FOREIGN KEY (agreement_uuid) REFERENCES agreements(uuid)
+);
+
+
+
 

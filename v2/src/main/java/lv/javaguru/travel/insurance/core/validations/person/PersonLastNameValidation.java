@@ -18,8 +18,9 @@ class PersonLastNameValidation extends PersonFieldValidationImpl {
 
     @Override
     public Optional<ValidationErrorDTO> validate(AgreementDTO agreement, PersonDTO person) {
-        return (person.getPersonLastName() == null || person.getPersonLastName().isEmpty())
-                ? Optional.of(validationErrorFactory.buildError("ERROR_CODE_8"))
-                : Optional.empty();
+        if (person.getPersonLastName() == null || person.getPersonLastName().isEmpty()) {
+                return Optional.of(validationErrorFactory.buildError("ERROR_CODE_8"));
+        }
+       return Optional.empty();
     }
 }

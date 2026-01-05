@@ -16,7 +16,11 @@ public class DateTimeUtil {
     }
 
     public Date currentDate() {
-        ZonedDateTime zonedDateTime = ZonedDateTime.now(ZoneId.of("Europe/Riga"));
+        ZonedDateTime zonedDateTime = ZonedDateTime.now(ZoneId.of("Europe/Riga"))
+                .withHour(0)
+                .withMinute(0)
+                .withSecond(0)
+                .withNano(0);
         return Date.from(zonedDateTime.toInstant());
     }
 

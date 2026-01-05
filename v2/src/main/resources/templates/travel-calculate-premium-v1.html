@@ -8,12 +8,15 @@
 
 <h1>Travel Insurance Premium Calculation</h1>
 
-<form action="/insurance/travel/web" th:object="${request}" method="post">
+<form action="/insurance/travel/web/v1" th:object="${request}" method="post">
     <label for="personFirstName">First Name:</label>
     <input type="text" id="personFirstName" th:field="${request.personFirstName}"><br><br>
 
     <label for="personLastName">Last Name:</label>
     <input type="text" id="personLastName" th:field="${request.personLastName}"><br><br>
+
+    <label for="personalCode">Personal Code:</label>
+    <input type="text" id="personalCode" th:field="${request.personalCode}"><br><br>
 
     <label for="personBirthDate">Birth Date:</label>
     <input type="date" id="personBirthDate"
@@ -32,7 +35,7 @@
     <input type="text" id="medicalRiskLimitLevel" th:field="${request.medicalRiskLimitLevel}"><br><br>
 
     <label for="travelCost">Travel Cost:</label>
-    <input type="text" id="travelCost" th:field="${travelCost}"><br><br>
+    <input type="text" id="travelCost" th:field="${request.travelCost}"><br><br>
 
     <label for="selectedRisks">Selected Risks:</label>
     <input type="text" id="selectedRisks" th:field="${request.selectedRisks}"><br><br>
@@ -40,6 +43,10 @@
     <button type="submit">Calculate Premium</button>
 </form>
 
+<form action="/insurance/travel/web/v1" method="get">
+    <button type="submit">Clear</button>
+
+</form>
 
 <td th:if="${response != null && response.errors != null}">
     <h3>Travel Insurance Premium Calculation ERRORS</h3>
@@ -68,6 +75,25 @@
 <br>
 </tr>
 </td>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+    function formatDate(date) {
+    return date.toISOString().split('T')[0]
+    }
+
+    const today = new Date();
+
+    const dateFrom = new Date(today);
+    dateFrom.setDate(today.getDate() + 1);
+
+    const dateTo = new Date(today);
+    dateTo.setDate(today.getDate() + 2);
+
+    document.getElementById('agreementDateFrom').value = formatDate(dateFrom);
+    document.getElementById('agreementDateTo').value = formatDate(dateTo);
+});
+</script>
 
 </body>
 </html>

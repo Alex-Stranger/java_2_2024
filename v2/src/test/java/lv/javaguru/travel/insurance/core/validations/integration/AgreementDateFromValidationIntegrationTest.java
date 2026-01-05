@@ -30,13 +30,13 @@ public class AgreementDateFromValidationIntegrationTest {
         PersonDTO person = new PersonDTO();
         person.setPersonFirstName("Tom");
         person.setPersonLastName("Sawyer");
-        person.setPersonalCode("08051865-15728");
+        person.setPersonalCode("080565-15728");
         person.setPersonBirthDate(createDate("2022.04.01"));
         person.setMedicalRiskLimitLevel("LEVEL_15000");
 
         AgreementDTO agreement = AgreementDTO.builder()
                 .agreementDateFrom(null)
-                .agreementDateTo(createDate("2025.12.29"))
+                .agreementDateTo(createDate("2026.12.29"))
                 .country("JAPAN")
                 .selectedRisks(List.of("TRAVEL_MEDICAL"))
                 .persons(List.of(person))
@@ -54,12 +54,12 @@ public class AgreementDateFromValidationIntegrationTest {
         PersonDTO person = new PersonDTO();
         person.setPersonFirstName("Tom");
         person.setPersonLastName("Sawyer");
-        person.setPersonalCode("08051865-15728");
+        person.setPersonalCode("080565-15728");
         person.setPersonBirthDate(createDate("2022.04.01"));
         person.setMedicalRiskLimitLevel("LEVEL_15000");
 
         AgreementDTO agreement = AgreementDTO.builder()
-                .agreementDateFrom(createDate("2025.10.29"))
+                .agreementDateFrom(createDate("2026.10.29"))
                 .agreementDateTo(createDate(""))
                 .country("JAPAN")
                 .selectedRisks(List.of("TRAVEL_MEDICAL"))
@@ -78,7 +78,7 @@ public class AgreementDateFromValidationIntegrationTest {
         PersonDTO person = new PersonDTO();
         person.setPersonFirstName("Tom");
         person.setPersonLastName("Sawyer");
-        person.setPersonalCode("08051865-15728");
+        person.setPersonalCode("080565-15728");
         person.setPersonBirthDate(createDate("2022.04.01"));
         person.setMedicalRiskLimitLevel("LEVEL_15000");
 
@@ -104,13 +104,13 @@ public class AgreementDateFromValidationIntegrationTest {
         PersonDTO person = new PersonDTO();
         person.setPersonFirstName("Tom");
         person.setPersonLastName("Sawyer");
-        person.setPersonalCode("08051865-15728");
+        person.setPersonalCode("080565-15728");
         person.setPersonBirthDate(createDate("1990.04.01"));
         person.setMedicalRiskLimitLevel("LEVEL_15000");
 
         AgreementDTO agreement = AgreementDTO.builder()
                 .agreementDateFrom(createDate("2000.05.20"))
-                .agreementDateTo(createDate("2025.11.10"))
+                .agreementDateTo(createDate("2026.11.10"))
                 .country("JAPAN")
                 .selectedRisks(List.of("TRAVEL_MEDICAL"))
                 .persons(List.of(person))
@@ -128,7 +128,7 @@ public class AgreementDateFromValidationIntegrationTest {
         PersonDTO person = new PersonDTO();
         person.setPersonFirstName("Tom");
         person.setPersonLastName("Sawyer");
-        person.setPersonalCode("08051865-15728");
+        person.setPersonalCode("080565-15728");
         person.setPersonBirthDate(createDate("1990.04.01"));
         person.setMedicalRiskLimitLevel("LEVEL_15000");
 
@@ -153,7 +153,7 @@ public class AgreementDateFromValidationIntegrationTest {
         PersonDTO person = PersonDTO.builder()
                 .personFirstName("")
                 .personLastName("Sawyer")
-                .personalCode("08051865-15728")
+                .personalCode("080565-15728")
                 .personBirthDate(createDate("2022.04.01"))
                 .medicalRiskLimitLevel("LEVEL_15000")
                 .risks(List.of(RiskDTO.builder()

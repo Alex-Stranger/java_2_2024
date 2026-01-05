@@ -17,8 +17,11 @@ class PersonPersonalCodeValidation extends PersonFieldValidationImpl {
 
     @Override
     public Optional<ValidationErrorDTO> validate(AgreementDTO agreement, PersonDTO person) {
-        return (person.getPersonalCode() == null || person.getPersonalCode().isEmpty())
-                ? Optional.of(validationErrorFactory.buildError("ERROR_CODE_16"))
-                : Optional.empty();
+
+        if (person.getPersonalCode() == null || person.getPersonalCode().isEmpty()) {
+            return Optional.of(validationErrorFactory.buildError("ERROR_CODE_16"));
+        }
+        return Optional.empty();
     }
 }
+
